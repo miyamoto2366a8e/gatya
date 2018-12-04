@@ -7,13 +7,13 @@ export default new Vuex.Store({
   state: {
     // 単純なテキストデータ
     // message: '初期メッセージ',
-    kingaku: 100,
+    kingaku: 0,
     tanka: 100,
-    free: 110,
-    pu1: 0.007,
-    pu2: 0.01,
-    pu3: 0.02,
-    border: 80,
+    free: 0,
+    pu1: 0.01,
+    pu2: 0.00,
+    pu3: 0.00,
+    border: 90,
     uid: null,
     myset:[],
     signflag: 0

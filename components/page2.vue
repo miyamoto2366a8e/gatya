@@ -25,20 +25,17 @@
       <span v-if="this.pu3yo.safekaisu > 0">目的Cを{{this.border}}%の確率で入手するにはあと<B>{{this.pu3yo.safekaisu}}回</B>のガチャ、=約{{this.pu3yo.safekingaku}}円必要</span></P>
       <span v-if="this.pu3yo.safekaisu <= 0">{{this.border}}%を安全とする場合、<B>{{this.pu3yo.safekaisu * -1}}</B>回分の余力があります</span>
     <br>
-    <p v-if="this.totalyo.safekingaku > 3000">
-      {{this.totalyo.safekingaku}}円あれば買えるもの</p>
-
-    {{this.url}}{{this.a}}{{this.test.a}}
+    <h3 v-if="this.totalyo.safekingaku > 3000">
+      {{this.totalyo.safekingaku}}円あれば買えるもの</h3>
     </div>
-          <div class="afi">
+    <div class="afi">
       <img src="../assets/MHW.jpg" width="200px" v-if="this.totalyo.safekingaku < 30000 && this.totalyo.safekingaku >3000"><br>
       <img src="../assets/ps4.jpg" width="800px" v-if="this.totalyo.safekingaku > 30000"><br>
-            </div>
-            <div class="result2">
-                 <div v-if="this.sure == 0" class="button" @click="download"><g-button-wave color="primary" size="button--size-m">結果をCSVでダウンロード</g-button-wave></div>
+    </div>
+    <div class="result2">
+    <div v-if="this.sure == 0" @click="download"><g-button-wave color="primary" size="button--size-m">結果をCSVでダウンロード</g-button-wave></div>
     <a id="downloader" v-bind:href="this.url"><g-button-wave v-if="this.sure == 1" color="primary" size="button--size-m">ダウンロードします。よろしいですか？</g-button-wave></a>
-        <div class="clipcopy" v-bind:data-clipboard-text="this.result.crip"><g-button-wave color="primary" size="button--size-m">Crip</g-button-wave></div>
-    {{Bakusi}}
+        <div class="clipcopy" v-bind:data-clipboard-text="this.result.crip"><g-button-wave color="primary" size="button--size-m">クリップボードにコピー</g-button-wave></div>
   </div>
   </div>
 </template>
@@ -289,6 +286,9 @@ export default {
   float:left;
 }
 .result{
+  clear:both;
+}
+.result2{
   clear:both;
 }
 </style>
