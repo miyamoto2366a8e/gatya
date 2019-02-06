@@ -4,7 +4,6 @@ import HelloWorld from '@/components/HelloWorld'
 import HelloWorldB from '@/components/HelloWorldB'
 import page1 from '@/components/page1'
 import page2 from '@/components/page2'
-import page3 from '@/components/page3'
 import touroku from '@/components/touroku'
 import sign from '@/components/sign'
 Vue.use(Router)
@@ -29,10 +28,6 @@ export default new Router({
     {
       path: '/page2',
       component: page2
-    },
-    {
-      path: '/page3',
-      component: page3
     },
     {
       path: '/touroku',

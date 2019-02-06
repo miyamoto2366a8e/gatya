@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <header>
-      <!-- <img src="./assets/logo.png" width="50px"> -->
-      <img src="./assets/logo3.png" height="70px">
+      <!-- <img src="./assets/logo3.png" height="70px"> -->
+      <h1>ガチャ支援ツール</h1>
       <div>
         <!-- <div class="button" @click="signcheck"><g-button-wave color="primary" size="button--size-m">サインチェック</g-button-wave></div> -->
         <div class="button" @click="signOut">
@@ -20,17 +20,14 @@
         <!-- <h2 class="clear" v-if="this.helloflag == 1" key="input-email">ログイン中</h2>
       <h2 class="clear" v-else-if="this.helloflag == 2" key="input-email">ログアウトしました</h2>
       <h2 class="clear" v-else>errar</h2> -->
-        <h2>{{this.hello}}</h2><h2>{{this.$store.state.signflag}}</h2>
+        <h2>{{this.hello}}</h2>
       </div>
       <ul class="clear">
-        <!-- firefoxではボタンの中でルーターを動作させることができない。どうしよう -->
-        <li v-if="this.$store.state.signflag == 0 || this.$store.state.signflag == 2" ><button><router-link to="/">入力フォーム</router-link></button></li>
-        <li v-if="this.$store.state.signflag == 1" ><button><router-link to="/HelloWorldB">入力フォーム</router-link></button></li>
-        <li><button><router-link to="/page2">結果A(当選確率)</router-link></button></li>
-        <li><button><router-link to="/page1">電卓</router-link></button></li>
-        <li><button><router-link to="/page3">AIに愚痴る</router-link></button></li>
+        <li v-if="this.$store.state.signflag == 0 || this.$store.state.signflag == 2" ><router-link to="/">入力フォーム</router-link></li>
+        <li v-if="this.$store.state.signflag == 1" ><router-link to="/HelloWorldB">入力フォーム</router-link></li>
+        <li><router-link to="/page2">結果A(当選確率)</router-link></li>
+        <li><router-link to="/page1">電卓</router-link></li>
       </ul>
-      <div class="clear"></div>
     </header>
     <router-view/>
   </div>
@@ -59,7 +56,7 @@
               this.$store.commit('setuid', this.user['uid']),
               this.$store.commit('setSignflag', 1)
               this.$router.push('HelloWorldB'),
-              this.hello = "ようこそ" + this.user['email'] + "さん"
+              this.hello = "サインインしました"
             // this.$store.commit('setmyset', db.collection('test').doc(this.user.uid))
           })
       },
@@ -183,18 +180,12 @@
     width: 100%;
     padding: 8px;
   }
-  img {
-    float: left;
-  }
-  h1 {
-    font-family: 'M PLUS 1p', sans-serif;
-    color: white;
-    width: 40%;
-    float: left;
+  h1{
+     text-align: center;
+     color:white;
   }
   h2 {
     color: white;
-    text-align: right;
     font-size: 16px;
     margin-top: 8px;
   }
@@ -207,17 +198,22 @@
     padding-left: 0px;
   }
   li {
-    width: 25%;
+    width: 33.3%;
+    height:100%;
     float: left;
     border: 1px solid black;
     display: block;
+    background-color:white;
+    text-align:center;
   }
   header {
+    height:20vh;
     background-color: #31425F;
     padding: 1px;
-  }
-  button {
-    width: 100%;
+          display: grid;
+justify-content: center;
+  grid-template-columns: 1fr;
+   grid-template-rows: 40% 40% 20%;
   }
   .button {
     float: right;
@@ -226,4 +222,7 @@
   .clear {
     clear: both;
   }
+/* @media screen and (min-width:1024px) {
+
+} */
 </style>

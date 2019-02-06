@@ -7,6 +7,9 @@ import store from './store'
 import vueButtonEffect from 'vue-button-effect'
 import '@fortawesome/fontawesome-free-webfonts/css/fontawesome.css'
 import './plugins/firebase'
+var validator = require("vue-validator");
+
+Vue.use(validator);
 
 Vue.use(vueButtonEffect)
 

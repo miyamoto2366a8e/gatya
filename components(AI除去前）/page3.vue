@@ -28,6 +28,7 @@ methods: {
   ai () {
 (this.panda == 2)? this.panda = 0 : this.panda = this.panda + 1
 let params = new FormData();
+// 使うときはapikeyを入れてください
     params.append("apikey","");
     params.append("query",this.talk);
     axios.post('https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk',params)
